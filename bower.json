@@ -1,0 +1,10 @@
+{
+    "name": "Util.js",
+    "main": "util.js",
+    "ignore": [
+        ".gitignore"
+    ],
+    "dependencies": {
+        "jquery": "*"
+    }
+}
