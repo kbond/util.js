@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zenstruck Util.js Examples</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+
+    <style type="text/css">
+        h2 {
+            border-bottom: 1px solid #ccc;
+        }
+        h3 {
+            font-style: italic;
+        }
+
+        .foo {
+            cursor: crosshair;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Zenstruck Util.js Examples</h1>
+
+        <h2>Mobile Functions</h2>
+
+        <p>
+            <a href="javascript:alert(zsUtil.getDeviceWidth())" class="btn btn-default">.getDeviceWidth()</a>
+            <a href="javascript:alert(zsUtil.isPhone())" class="btn btn-default">.isPhone()</a>
+            <a href="javascript:alert(zsUtil.isTablet())" class="btn btn-default">.isTablet()</a>
+            <a href="javascript:alert(zsUtil.isMobile())" class="btn btn-default">.isMobile()</a>
+            <a href="javascript:alert(zsUtil.isDesktop())" class="btn btn-default">.isDesktop()</a>
+        </p>
+
+        <h2>Post Link</h2>
+
+        <h3>Default Options</h3>
+
+        <div class="row">
+            <div class="col-md-6">
+                <p>
+                    <a href="http://zenstruck.com/method-test" class="btn btn-default post-link1">POST</a>
+                    <a href="http://zenstruck.com/method-test" data-method="PUT" class="btn btn-default btn-success post-link1">PUT</a>
+                    <a href="http://zenstruck.com/method-test" data-method="DELETE" class="btn btn-default btn-danger post-link1">DELETE</a>
+                    <a href="http://zenstruck.com/method-test" data-method="DELETE" data-confirm-message="Are you sure?" class="btn btn-default btn-danger post-link1">DELETE (with confirmation)</a>
+                </p>
+                <p>
+                    <a href="http://zenstruck.com/method-test" target="_blank" class="btn btn-default post-link1">POST (target=_blank)</a>
+                    <a href="http://zenstruck.com/method-test" data-method="PUT" data-token="foobar" class="btn btn-default btn-success post-link1">PUT (with CSRF token)</a>
+                    <a href="http://zenstruck.com/method-test" data-method="INVALID" class="btn btn-default post-link1">Invalid method</a>
+                </p>
+            </div>
+            <div class="col-md-6">
+                <pre>$('.post-link1').zsPostLink();</pre>
+            </div>
+        </div>
+
+        <h3>Custom Options</h3>
+
+        <div class="row">
+            <div class="col-md-6">
+                <a href="http://zenstruck.com/method-test" class="btn btn-default post-link2">POST</a>
+                <a href="http://zenstruck.com/method-test" data-method="put" class="btn btn-success post-link2">PUT</a>
+                <a href="http://zenstruck.com/method-test" data-method="delete" class="btn btn-danger post-link2">DELETE</a>
+            </div>
+            <div class="col-md-6">
+                <pre>
+$('.post-link2').zsPostLink({
+    messages: {
+        _all: 'Really?',
+        delete: 'Are you sure you want to delete?',
+        put: 'Are you sure?'
+    }
+});</pre>
+            </div>
+        </div>
+
+        <h2>Link Container</h2>
+
+        <h3>Default Options</h3>
+
+        <div class="row">
+            <div class="col-md-6">
+                <table id="link-container1" class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Username</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><a href="https://twitter.com/mdo">@mdo</a></td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><a href="https://twitter.com/fat">@fat</a></td>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><a href="https://twitter.com/twitter" target="_blank">@twitter</a> <em>(target="_blank")</em></td>
+                        <td>Larry</td>
+                        <td><a href="http://zenstruck.com"><span>the Bird</span></a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <pre>$('tbody tr', '#link-container1').zsLinkContainer();</pre>
+            </div>
+        </div>
+
+        <h3>Custom Options</h3>
+
+        <div class="row">
+            <div class="col-md-6">
+                <table id="link-container2" class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Username</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><a href="https://twitter.com/mdo">@mdo</a></td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><a href="https://twitter.com/fat">@fat</a></td>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><a href="https://twitter.com/twitter">@twitter</a></td>
+                        <td>Larry</td>
+                        <td><a href="http://zenstruck.com">the Bird</a> <em>this link is used</em></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <pre>
+$('tbody tr', '#link-container2').zsLinkContainer({
+    hoverClass: 'foo',
+    targetSelector: 'a:last'
+});</pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="util.js"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            $('.post-link1').zsPostLink();
+            $('.post-link2').zsPostLink({
+                messages: {
+                    _all: 'Really?',
+                    delete: 'Are you sure you want to delete?',
+                    put: 'Are you sure?'
+                }
+            });
+
+            $('tbody tr', '#link-container1').zsLinkContainer();
+            $('tbody tr', '#link-container2').zsLinkContainer({ hoverClass: 'foo', targetSelector: 'a:last' });
+        });
+    </script>
+</body>
+</html>
