@@ -1,5 +1,5 @@
 {
-    "name": "Util.js",
+    "name": "util.js",
     "main": "util.js",
     "ignore": [
         ".gitignore"
