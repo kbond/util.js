@@ -8,7 +8,7 @@ A set of reusable javascript utilities.  For a demo of the available utilites, l
 
 ## Mobile Functions
 
-A set of functions for helping with responsive development.
+A set of functions for helping with responsive apps.
 
 ```javascript
 zsUtil.getDeviceWidth(); // returns the current screen width
@@ -49,7 +49,7 @@ $('.post-link').zsPostLink();
 
 ### Non-POST Links
 
-Web browsers only allow for `POST` or `GET` methods as form actions.  To allow for other methods such as `PUT`
+The HTML spec only allows for `POST` or `GET` methods as form actions.  To allow for other methods such as `PUT`
 and `DELETE` we have to "trick" your web app.  This function allows you to add a hidden `_method` form field
 to the payload.  It is up to your web app to utilize this.
 
@@ -115,7 +115,7 @@ the `tokenTemplate` option.
 ## Link Container
 
 Sometimes it is useful for have an entire element be "linkable" - like the entire row of a table. This function
-takes a container selector and makes it clickable and go to the first <a> it finds within it (by default).  Example:
+takes a container selector and makes it clickable and go to the first `<a>` it finds within it (by default).  Example:
 
 ```javascript
 $('tbody tr').zsLinkContainer(); // makes all `tbody tr` elements linkable to the first <a> in it
